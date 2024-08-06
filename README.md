@@ -1,1 +1,2 @@
-# Enrollment-Promotion
+Enrollment Promotion Website
+Only HTML, CSS, Javascrip
