@@ -1,0 +1,6 @@
+Bố cục website gồm các trang sau:
+Trang chủ
+Giới thiệu
+Chương trình đào tạo
+Thông tin tuyển sinh
+Tính điểm xét tuyển
