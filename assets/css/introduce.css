@@ -1,0 +1,254 @@
+
+
+
+/* Container holding the entire slider */
+.container-midle {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    overflow: hidden; 
+}
+
+
+
+
+/* Container for card sliding */
+.container-midle-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    position: relative;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 2rem;
+}
+
+.prev {
+    left: 10px; 
+}
+
+.next {
+    right: 10px; 
+}
+
+/* Container for card sliding */
+.card__container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    /* width: calc(100% * (7 + 1));  */
+}
+
+/* Each card article */
+.card__article {
+    flex: 0 0 auto; 
+    margin-right: 6rem; 
+    position: relative;
+}
+
+/* Image styling */
+.card__img {
+    width: 328px; /* Width of the card image */
+    border-radius: 1.5rem;
+}
+
+/* Data overlay on the card */
+.card__data {
+    width: 280px;
+    background-color: var(--body-color);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -6.875rem; /* Position below the card image */
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+/* Card description */
+.card__description {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .25rem;
+}
+
+/* Card title */
+.card__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: .75rem;
+}
+
+/* Button styling */
+.card__button {
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.card__button:hover {
+    text-decoration: underline;
+}
+
+/* Animation hover */
+.card__article:hover .card__data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card__article:hover {
+    animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+    animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+    animation: remove-data 1s forwards;
+}
+/* Leaf Animation */
+.section_leaf{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section_leaf .leaf_set{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    pointer-events: none;
+}
+.section_leaf .leaf_set div{
+    position: absolute;
+    display: block;
+    z-index: 999;
+}
+.section_leaf .leaf_set div:nth-child(1){
+    right: 0%;
+    animation: animate 15s linear  infinite;
+}
+/* Card animation */
+@keyframes show-data {
+    50% {
+        transform: translateY(-10rem);
+    }
+    100% {
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(-7rem);
+    }
+    50% {
+        transform: translateY(-10rem);
+    }
+    100% {
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow {
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+    50% {
+        overflow: hidden;
+        pointer-events: none;
+    }
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top:-10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+        
+    }
+    20% {
+        transform: translateX(-20px) rotate(45deg);
+    }
+    40% {
+        transform: translateX(-20px) rotate(90deg);
+    }
+    60% {
+        transform: translateX(20px) rotate(180deg);
+    }
+    80% {
+        transform: translateX(-20px) rotate(180deg);
+    }
+    100% {
+        top:110%;
+        transform: translateX(-20px) rotate(225deg);
+    }
+}
+/* BREAKPOINTS */
+/* For small devices */
+@media screen and (max-width: 340px) {
+    .container-midle-location {
+        margin-inline: 1rem;
+    }
+    .card__data {
+        width: 250px;
+        padding: 1rem 1.5rem;
+    }
+    .card__description {
+        font-size: 0.875rem;
+    }
+    .card__title {
+        font-size: 0.875rem;
+    }
+    .prev, .next {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .prev, .next {
+        font-size: 2rem;
+    }
+    .prev {
+        left: -1rem;
+    }
+    .next {
+        right: -1rem;
+    }
+}
+.card__container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 138rem;
+}

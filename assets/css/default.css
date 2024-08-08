@@ -12,7 +12,12 @@
 
 /* Color */
 :root {
-    
+    --body-color: #fff;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #fff;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
 }
 
 /* Body */
